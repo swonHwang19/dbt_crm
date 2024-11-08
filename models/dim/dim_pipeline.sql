@@ -12,9 +12,9 @@ SELECT
     o.name,
     o.stagename,
     o.closedate,
-    o.isclosed,
+    o.isclosed AS is_closed,
     o.createddate,
-    s.full_name,
+    s.full_name AS full_name,
     s.department
 
 FROM o

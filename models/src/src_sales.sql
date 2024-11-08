@@ -18,5 +18,3 @@ FROM
 
 WHERE
     isactive = true 
-    AND title = '매니저' 
-    AND department is not null 

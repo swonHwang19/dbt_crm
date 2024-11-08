@@ -8,7 +8,7 @@ WITH src_lead AS (
         company,
         address,
         SUBSTRING(address, LENGTH(address) - 7, 2) AS state
-    FROM {{ source('crm_data', 'lead') }}
+    FROM {{ source('crm_data', 'leads') }}
 )
 
 SELECT 
