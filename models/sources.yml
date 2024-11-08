@@ -7,5 +7,5 @@ sources:
         identifier: opportunity
       - name: user
         identifier: user
-      - name: lead
-        identifier: lead
+      - name: leads
+        identifier: leads
