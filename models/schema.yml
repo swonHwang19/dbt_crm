@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: src_opportunity
+    columns:
+
+      - name: id
+        test: 
+          - unique
+          - not_null

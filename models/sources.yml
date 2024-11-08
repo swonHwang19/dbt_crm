@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: crm_data
+    schema: CRM
+    tables:
+      - name: opportunity
+        identifier: opportunity
+      - name: user
+        identifier: user
+      - name: lead
+        identifier: lead
