@@ -9,7 +9,7 @@ SELECT
     product_name,
     SUM(quantity) AS total_quantity_sold,
     unit_price,
-    SUM(quantity) * price AS total_revenue
+    SUM(quantity) * unt_price AS total_revenue
 
 FROM fct_product_sales
 GROUP BY p.name
