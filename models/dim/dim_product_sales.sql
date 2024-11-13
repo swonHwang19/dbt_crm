@@ -9,15 +9,15 @@ p AS (
 
 SELECT
     o.id,
-    o.name,
+    o.name AS opportunity_name,
     o.stagename,
     o.closedate,
     o.isclosed AS is_closed,
     o.createddate,
     o.productid,
     o.quantity,
-    p.name,
-    p.price
+    p.name AS product_name,
+    p.price AS unit_price
 
 FROM o
 LEFT JOIN p 
