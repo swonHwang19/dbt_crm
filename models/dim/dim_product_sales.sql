@@ -17,9 +17,8 @@ SELECT
     o.productid,
     o.quantity,
     p.name AS product_name,
-    p.price AS unit_price
+    p.price
 
 FROM o
 LEFT JOIN p 
-
-ON (o.productid = p.id)
+ON (o.productid = p.id);
