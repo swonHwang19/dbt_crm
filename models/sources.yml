@@ -9,3 +9,7 @@ sources:
         identifier: user
       - name: leads
         identifier: leads
+      - name: inbounds
+        identifier: inbounds
+      - name: product
+        identifier: product

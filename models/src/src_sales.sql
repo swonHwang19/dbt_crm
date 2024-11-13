@@ -17,4 +17,5 @@ FROM
     src_sales
 
 WHERE
-    isactive = true 
+    title IS NOT NULL
+    AND department IS NOT NULL;
