@@ -18,4 +18,4 @@ FROM
 
 WHERE
     title IS NOT NULL
-    AND department IS NOT NULL;
+    AND department IS NOT NULL

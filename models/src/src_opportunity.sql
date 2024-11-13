@@ -10,7 +10,9 @@ SELECT
     isclosed,
     ownerid,
     createddate,
-    lastmodifieddate
+    lastmodifieddate,
+    productid,
+    quantity
 
 FROM
     src_opportunity
