@@ -7,9 +7,9 @@ WITH fct_product_sales AS (
 
 SELECT
     product_name,
-    SUM(o.quantity) AS total_quantity_sold,
+    SUM(quantity) AS total_quantity_sold,
     unit_price,
-    SUM(total_quantity_sold) * price AS total_revenue
+    SUM(quantity) * price AS total_revenue
 
 FROM fct_product_sales
 GROUP BY p.name
