@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: FCT_PRODUCT_PIPELINE
+    description: "Pipeline data for products sold"
+    columns:
+      - name: Product_Name
+        description: "Name of the product"
+      - name: Total_Quantity_Sold
+        description: "Total quantity of products sold"
+      - name: Total_Revenue
+        description: "Total revenue generated from the product sales"
+  
+  - name: FCT_OPTY
+    description: "Opportunity data for each sales representative"
+    columns:
+      - name: FULL_NAME
+        description: "Sales representative's full name"
+      - name: TOTAL_OPPORTUNITY_COUNT
+        description: "Total number of opportunities for the representative"
+      - name: TOTAL_CLOSED_COUNT
+        description: "Total number of closed opportunities"
+      - name: CLOSED_WON_COUNT
+        description: "Count of opportunities closed as won"
+      - name: CLOSED_LOST_COUNT
+        description: "Count of opportunities closed as lost"
