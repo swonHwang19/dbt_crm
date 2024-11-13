@@ -6,9 +6,9 @@ WITH fct_product_sales AS (
 )
 
 SELECT
-    p.name AS product_name,
+    product_name,
     SUM(o.quantity) AS total_quantity_sold,
-    p.price AS unit_price,
+    unit_price,
     SUM(total_quantity_sold) * price AS total_revenue
 
 FROM fct_product_sales
