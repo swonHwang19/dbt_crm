@@ -8,9 +8,9 @@ WITH fct_product_sales AS (
 SELECT
     product_name,
     SUM(quantity) AS total_quantity_sold,
-    unit_price,
-    SUM(quantity * unt_price) AS total_revenue
+    price,
+    SUM(quantity * price) AS total_revenue
 
 FROM fct_product_sales
-GROUP BY p.name
+GROUP BY product_name, price
 ORDER BY total_revenue DESC
