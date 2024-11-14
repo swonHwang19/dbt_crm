@@ -3,6 +3,8 @@ semantic_models:
     description: |
       Product sales pipeline for each product.
     model: ref('fct_product_pipeline')
+    defaults:
+      agg_time_dimension: date_day  # 기본 시간 차원을 설정
     entities:
       - name: product
         expr: Product_Name
@@ -12,6 +14,10 @@ semantic_models:
         type: categorical
       - name: category
         type: categorical
+      - name: date_day  # date dimension 추가
+        type: time
+        type_params:
+          time_granularity: day
     measures:
       - name: total_quantity_sold
         description: "Total quantity of each product sold."
