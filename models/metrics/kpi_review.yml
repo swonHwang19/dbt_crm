@@ -1,26 +1,48 @@
-version: 2
+semantic_models: 
+  - name: product_sales
+    description: |
+      Product sales pipeline for each product.
+    model: ref('fct_product_pipeline')
+    entities:
+      - name: product
+        expr: Product_Name
+        type: primary
+    dimensions:
+      - name: product_name
+        type: categorical
+      - name: category
+        type: categorical
+    measures:
+      - name: total_quantity_sold
+        description: "Total quantity of each product sold."
+        agg: sum
+      - name: total_revenue
+        description: "Total revenue generated from each product."
+        agg: sum
 
-models:
-  - name: FCT_PRODUCT_PIPELINE
-    description: "Pipeline data for products sold"
-    columns:
-      - name: Product_Name
-        description: "Name of the product"
-      - name: Total_Quantity_Sold
-        description: "Total quantity of products sold"
-      - name: Total_Revenue
-        description: "Total revenue generated from the product sales"
-  
-  - name: FCT_OPTY
-    description: "Opportunity data for each sales representative"
-    columns:
-      - name: FULL_NAME
-        description: "Sales representative's full name"
-      - name: TOTAL_OPPORTUNITY_COUNT
-        description: "Total number of opportunities for the representative"
-      - name: TOTAL_CLOSED_COUNT
-        description: "Total number of closed opportunities"
-      - name: CLOSED_WON_COUNT
-        description: "Count of opportunities closed as won"
-      - name: CLOSED_LOST_COUNT
-        description: "Count of opportunities closed as lost"
+  - name: sales_opportunity
+    description: |
+      Sales opportunity metrics by representative.
+    model: ref('fct_opty')
+    entities:
+      - name: sales_rep
+        expr: FULL_NAME
+        type: primary
+    dimensions:
+      - name: full_name
+        type: categorical
+      - name: region
+        type: categorical
+    measures:
+      - name: total_opportunity_count
+        description: "Total number of sales opportunities."
+        agg: sum
+      - name: total_closed_count
+        description: "Total number of closed opportunities."
+        agg: sum
+      - name: closed_won_count
+        description: "Total won opportunities count."
+        agg: sum
+      - name: closed_lost_count
+        description: "Total lost opportunities count."
+        agg: sum
