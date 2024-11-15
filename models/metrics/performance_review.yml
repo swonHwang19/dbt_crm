@@ -3,6 +3,8 @@ semantic_models:
     description: |
       A semantic model for viewing the most popular products sold by each sales representative.
     model: ref('fct_popular_product')
+    defaults:
+      agg_time_dimension: last_modified_date
     entities:
       - name: sales_rep
         expr: SALES_REP
@@ -13,6 +15,11 @@ semantic_models:
         type: categorical
         expr: PRODUCT_NAME
         description: "The name of the product."
+      - name: last_modified_date
+        type: time
+        expr: LAST_MODIFIED_DATE
+        type_params:
+          time_granularity: day
 
     measures:
       - name: total_product_count
