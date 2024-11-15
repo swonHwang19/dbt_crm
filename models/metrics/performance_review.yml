@@ -1,0 +1,39 @@
+semantic_models:
+  - name: popular_product_sales
+    description: |
+      A semantic model for viewing the most popular products sold by each sales representative.
+    model: ref('fct_popular_product')
+    entities:
+      - name: sales_rep
+        expr: SALES_REP
+        type: primary
+
+    dimensions:
+      - name: product_name
+        type: categorical
+        expr: PRODUCT_NAME
+        description: "The name of the product."
+
+    measures:
+      - name: total_product_count
+        description: "Total count of each product sold."
+        agg: sum
+        expr: TOTAL_PRODUCT_COUNT
+      - name: leads_product_count
+        description: "Total count of leads related to each product."
+        agg: sum
+        expr: LEADS_PRODUCT_COUNT
+      - name: opportunity_product_count
+        description: "Total count of opportunities related to each product."
+        agg: sum
+        expr: OPPORTUNITY_PRODUCT_COUNT
+
+metrics:
+  - name: top_3_products_by_sales_rep
+    description: "Top 3 most sold products for each sales representative based on total product count."
+    type: cumulative
+    label: The most sold products per sales_rep
+    type_params: 
+      measure: total_product_count
+    
+    
