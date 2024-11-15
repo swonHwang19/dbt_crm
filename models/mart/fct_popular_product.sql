@@ -14,7 +14,9 @@ SELECT
     COALESCE(lp.product_name, pp.product_name) AS product_name,
     COALESCE(lp.product_count, 0) AS leads_product_count,
     COALESCE(pp.opportunity_product_count, 0) AS opportunity_product_count,
-    COALESCE(lp.product_count, 0) + COALESCE(pp.opportunity_product_count, 0) AS total_product_count
+    COALESCE(lp.product_count, 0) + COALESCE(pp.opportunity_product_count, 0) AS total_product_count,
+    CURRENT_DATE AS last_modified_date
+    
 FROM
     lp
 FULL OUTER JOIN
