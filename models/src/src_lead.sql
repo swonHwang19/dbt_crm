@@ -7,7 +7,9 @@ WITH src_lead AS (
         job,
         company,
         address,
-        SUBSTRING(address, LENGTH(address) - 7, 2) AS state
+        SUBSTRING(address, LENGTH(address) - 7, 2) AS state,
+        interest AS interested_product,
+        ownerid AS sales_rep
     FROM {{ source('crm_data', 'leads') }}
 )
 
@@ -16,7 +18,9 @@ SELECT
     full_name,
     job,
     company,
-    state
+    state,
+    interested_product,
+    sales_rep
 
 FROM
     src_lead

@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-WITH fct_opty AS (
+WITH fct_opportunity_status AS (
     SELECT * 
     FROM {{ ref('dim_pipeline') }}
 )
@@ -12,7 +12,7 @@ SELECT
     SUM(CASE WHEN stagename = 'Closed Lost' THEN 1 ELSE 0 END) AS closed_lost_count
     
 FROM
-    fct_opty
+    fct_opportunity_status
 
 GROUP BY
     full_name
